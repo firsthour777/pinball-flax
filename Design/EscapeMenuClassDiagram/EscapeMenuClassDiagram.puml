@@ -1,0 +1,73 @@
+
+
+
+
+
+@startuml EscapeMenuClassDiagram
+
+
+top to bottom direction
+
+package "Escape Menu" {
+
+    package Buttons <<Node>> {
+
+        +Class "ReturnToMainMenuButton" as ReturnToMainMenuButtonClass {
+
+        }
+
+        +Class "LeaveGameButton" as LeaveGameButtonClass {
+
+        }
+
+        +Class "ResumeButton" as ResumeButtonClass {
+
+        }
+
+        +Class "RestartButton" as CreditsButtonClass {
+            // Disabled During Multiplayer
+        }
+
+ 
+
+    }
+
+    package Shared <<Node>> {
+
+        +Class "Settings" as SettingsClass {
+            In Settings Class Diagram
+        }
+
+
+    }
+
+
+
+
+}
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

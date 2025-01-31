@@ -1,0 +1,230 @@
+@startuml GameInstanceClassDiagram
+
+package "Game Instance" {
+
+    node "UI Elements" {
+
+        +Class "Chat Panel" as ChatPanelClass{
+
+        }
+
+        +Class "Score" as ScoreClass{
+
+        }
+
+        +Class "Balls Left" as BallsLeftClass{
+
+        }
+
+        +Class "High Score" as HighScoreClass{
+
+        }
+
+        +Class "Player" as PlayerClass{
+
+        }
+
+        +Class "Escape Menu" as EscapeMenuClass{
+
+        }
+
+    }
+
+
+    node "Gameplay Elements" {
+
+        +Class "Extra Ball" as ExtraBallClass{
+
+        }
+
+        +Class "End of Ball Bonus" as EndOfBallBonusClass{
+
+        }
+
+        +Class "Demo Play" as DemoPlayClass{
+
+        }
+
+        +Class "Multi-Ball" as MultiBallClass{
+
+        }
+
+        +Class "Ball Save" as BallSaveClass{
+
+        }
+
+        +Class "Player Flag" as PlayerFlagClass{
+
+        }
+
+    }
+
+    node "Playfield Elements" {
+
+        +Class "Spinner" as SpinnerClass{
+
+        }
+
+        +Class "Slingshot" as SlingshotClass{
+
+        }
+
+        +Class "Scoop" as ScoopClass{
+
+        }
+
+        +Class "Drop Target" as DropTargetClass{
+
+        }
+
+        +Class "Drain" as DrainClass{
+
+        }
+
+        +Class "Bumper" as BumperClass{
+
+        }
+
+        +Class "Bash Target" as BashTargetClass{
+
+        }
+
+        +Class "Ball Lock" as BallLockClass{
+
+        }
+
+        +Class "Gobble Hole" as GobbleHoleClass{
+
+        }
+
+        +Class "Kickback" as KickbackClass{
+
+        }
+
+        +Class "Magic Post" as MagicPostClass{
+
+        }
+
+        +Class "Peg" as PegClass{
+
+        }
+
+        +Class "Left Flipper" as LeftFlipperClass{
+
+        }
+
+        +Class "Right Flipper" as RightFlipperClass{
+
+        }
+
+        +Class "Plunger" as PlungerClass{
+
+        }
+
+        +Class "Ball" as BallClass{
+
+        }
+
+        +Class "Spinner" as SpinnerClass{
+
+        }
+
+    }
+
+
+    node "Buttons" {
+
+        +Class "EscapeMenu" as EscapeMenuClass{
+            In Escape Menu Class Diagram
+        }
+
+        +Class "Tilt" as TiltClass{
+
+        }
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

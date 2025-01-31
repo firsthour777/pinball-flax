@@ -1,0 +1,172 @@
+
+
+
+
+@startuml SettingsMenuClassDiagram
+
+
+top to bottom direction
+
+package "Settings Menu" {
+
+    package SettingsControlObject <<Node>> {
+
+
+
+        +Enum "Resolution" as ResolutionEnum {
+            3840x2160
+            2560x1440
+            1920x1080
+            1600x900
+            1280x720
+            1024x768
+            800x600
+        }
+
+        +Enum "WindowType" as WindowTypeEnum {
+            Windowed
+            Fullscreen
+            BorderlessFullscreen
+            BorderlessWindow
+        }
+
+        +Class "VideoGraphics" as VideoGraphicsClass{
+            +ResolutionEnum ResolutionSelected
+            +WindowType WindowTypeSelected
+        }
+
+
+
+        ' This class will be to control the video graphics of the game
+        ' Resolution
+        ' Window Type - Windowed, fullscreen, Borderless Fullscreen, Borderless Window
+        ' VSync
+        ' AntiAliasing
+        ' Texture Quality
+        ' Shadow Quality
+        ' Post Processing
+        ' Bloom
+        ' Motion Blur
+        ' Depth of Field
+        ' Ambient Occlusion
+        ' Most of these are unused in such a simple game like this.
+
+
+
+
+        +Enum "FlipperType" as FlipperTypeEnum {
+            Normal
+            Banana
+            Spike
+        }
+
+        +Class "FlipperPicker" as FlipperPickerClass {
+            +FlipperTypeEnum FlipperTypeSelected
+        }
+
+        +Class "DisableChat" as DisableChatClass {
+            +Boolean IsChatDisabled
+        }
+
+        +Class "Controls" as ControlsClass {
+            ' When chatting ignore other keys
+            +InputKey LeftPaddleKey
+            +InputKey RightPaddleKey
+            +InputKey PlungerKey
+            +InputKey PauseKey
+            +InputKey ChatKey
+            +InputKey ToggleHUDKey
+            +InputKey TiltKey
+
+        }
+
+        +Class "AudioSound" as AudioSoundClass {
+            +Boolean IsAllSoundsDisabled
+            +Float MasterVolume
+            +Float MusicVolume
+            +Float SFXVolume
+        }
+
+
+        +Class "Player Name" as PlayerNameClass {
+            ' Dissallow modification during gameplay
+            +String PlayerName
+
+        }
+
+        +Class "Player Flag" as PlayerFlagClass {
+            ' Dissallow modification during gameplay
+            +FlagType PlayerFlagSelected
+
+        }
+
+    }
+
+
+
+
+
+    package CurrentSettingsObject <<Node>> {
+
+        +Class "LoadedSettings" as LoadedSettingsClass {
+            +Settings LoadedSettings
+            +VideoGraphics LoadedVideoGraphics
+            +FlipperPicker LoadedFlipperPicker
+            +DisableChat LoadedDisableChat
+            +Controls LoadedControls
+
+        }
+
+        +Class "PreviousSettings" as PreviousSettingsClass {
+            +Settings PreviousSettings
+        }
+
+    }
+
+    package Buttons <<Node>> {
+        ' Buttons
+        +Class "BackButton" as BackButtonClass {
+
+        }
+
+        +Class "ApplyChangesButton" as ApplyChangesButtonClass {
+
+        }
+
+        +Class "DiscardChangesButton" as DiscardChangesButtonClass {
+
+        }
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+

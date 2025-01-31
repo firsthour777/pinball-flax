@@ -1,0 +1,83 @@
+
+
+
+
+
+@startuml MainMenuClassDiagram
+
+
+top to bottom direction
+
+package "Main Menu" {
+
+    package Buttons <<Node>> {
+
+        +Class "SinglePlayerButton" as SinglePlayerButtonClass {
+
+        }
+
+        +Class "MultiplayerButton" as MultiplayerButtonClass {
+            
+        }
+
+        +Class "HighScoresButton" as HighScoresButtonClass {
+            // Shows HighScores on Screen
+        }
+
+        +Class "CreditsButton" as CreditsButtonClass {
+            // Shows Credits
+        }
+
+        +Class "ExitButton" as ExitButtonClass {
+
+        }
+
+    }
+
+    package Shared <<Node>> {
+
+        +Class "Settings" as SettingsClass {
+            In Settings Class Diagram
+        }
+
+        +Class "PlayerFlag" as PlayerFlagClass {
+            In Settings Class Diagram
+        }
+
+        +Class "PlayerName" as PlayerNameClass {
+            In Settings Class Diagram
+        }
+
+
+    }
+
+
+
+
+}
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

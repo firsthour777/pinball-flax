@@ -1,0 +1,85 @@
+
+
+@startuml MainMenuClassDiagram
+
+
+top to bottom direction
+
+package "Main Menu" {
+
+
+
+
+
+    package ScreenUI <<Node>> {
+
+        +Class "GamesList" as GamesListClass {
+            +Int JoinedPlayers
+            +Int MaxPlayers
+            +String SessionName
+            +FlagType Flag
+            +Boolean isPasswordProtected
+            +Boolean isFriendsOnly
+            +String Password
+        }
+
+
+    }
+
+
+
+
+
+
+
+    package Buttons <<Node>> {
+
+        +Class "JoinGameButton" as JoinGameButtonClass {
+
+        }
+
+        +Class "BackButton" as BackButtonClass {
+            
+        }
+
+        +Class "HostGameButton" as HighScoresButtonClass {
+            // Dialog
+            +String SessionName
+            +FlagType Flag
+            +Boolean isPasswordProtected
+            +Boolean isFriendsOnly
+            +String Password
+            +Int MaxPlayers
+
+        }
+
+    }
+
+
+
+
+
+
+    package Shared <<Node>> {
+
+        +Class "PlayerFlag" as PlayerFlagClass {
+            In Settings Class Diagram
+        }
+
+        +Class "PlayerName" as PlayerNameClass {
+            In Settings Class Diagram
+        }
+
+
+    }
+
+
+
+
+}
+
+
+@enduml
+
+
+

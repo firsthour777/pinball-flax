@@ -1,0 +1,117 @@
+
+
+
+
+
+
+Actual General Steps:
+
+No need for So many diagrams.
+
+Component
+Class
+Activity
+
+That's what you really need because the Component effectively is the game, there is no other program.
+
+Then use the ERD and CND to show how data is transferred.
+
+Deployment can likely be skipped but I'm not there yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Steps:
+
+Step 1 
+Use Case Diagram 
+
+Step 2 
+Component Diagram
+
+Step 3
+Class Diagram
+
+Step 4
+Activity Diagram
+
+NOTE - Entity Relationship Diagram and Computer Networking Diagram can be done at anytime. Generally they aren't last, 
+but will be determined by how your Class/Component Diagram is reading into the Database and How Networking is done
+
+Step 5
+Entity Relationship Diagram
+
+Step 6
+Computer Networking Diagram
+
+Step 7
+Deployment Diagram
+
+
+
+
+
+Diagrams:
+
+
+Useful:
+
+Use Case Diagram - User Interactions
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/
+
+Component Diagram - Shows the components of the Software, each component is itself the system that is defined somewhere in teh code.
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/
+
+Class Diagram - Models Classes
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/
+
+Activity Diagram - Models a Method or Function Specific to the Activity Occuring, Specifies the Steps performed in an Algorithm or Class case 
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/
+
+Entity Relationship Diagram - Good for database and data modeling, shows how data is related to each other.
+https://guides.visual-paradigm.com/mastering-er-modeling-a-step-by-step-guide-with-real-world-examples-part-1-of-5/
+https://www.visual-paradigm.com/VPGallery/datamodeling/EntityRelationshipDiagram.html
+
+Computer Networking Diagram - Details how networking is going to happen for the software.
+https://www.uml-diagrams.org/network-architecture-diagrams.html
+
+Deployment Diagram - Basically represents servers and artifacts that are running the code, this is related to deployment.
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-deployment-diagram/
+
+
+
+
+
+Rare Use:
+
+Sequence Diagram - Use when the sequence of events is important
+
+Communication Diagram - Useful for very complex functions that might be intricate between classes
+
+State Diagram - Models specific states of something and shows its lifecycle
+
+Object Diagram - Diagrams a class when instantiated, so you can visually see different objects at different states
+
+Package Diagram - shows model elements, basically a high level overview? Seems a bit useless???
+
+Composite Structure Diagram - Defines what's going on in the server, basically a less specific class diagrama, focused on defining behaviors.
+
+Interaction Diagram - variant of the activity diagram, overfiew of the flow of actions, ratherthan what people do 
+
+Timing Diagram - Shows cycle of something, like a watercycle
+
+Profile Diagram - similar 
+

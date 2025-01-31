@@ -1,0 +1,215 @@
+
+
+
+
+
+
+
+
+@startuml ComponentDiagramPinballFlax
+
+
+
+
+
+top to bottom direction
+
+package "PinballFlax Game" {
+
+
+    ' Shared Interfaces
+    () "Settings" as SettingsInterface
+    () "Player Name" as PlayerNameInterface
+    () "Player Flag" as PlayerFlagInterface
+
+
+    node "Main Menu" {
+
+        [Main Menu] as MainMenuComponent
+        ' Interfaces
+        () "Multiplayer" as MultiplayerInterface
+        () "Single Player" as SinglePlayerInterface
+        () "High Scores" as HighScoresInterface
+        () "Credits" as CreditsInterface
+        () "Exit" as ExitInterface
+        ' Relationships
+        MainMenuComponent -left-> MultiplayerInterface
+        MainMenuComponent -right-> SinglePlayerInterface
+        MainMenuComponent -up-> HighScoresInterface
+        MainMenuComponent -up-> CreditsInterface
+        MainMenuComponent -up-> ExitInterface
+        ' Shared Relationships
+        MainMenuComponent -down-> SettingsInterface
+        MainMenuComponent -down-> PlayerNameInterface
+        MainMenuComponent -down-> PlayerFlagInterface
+    }
+
+    node "Escape Menu" {
+
+        [Escape Menu] as EscapeMenuComponent
+        ' Interfaces
+        () "Resume" as ResumeInterface
+        () "Restart" as RestartInterface
+        () "Return To Main Menu" as ReturnToMainMenuInterface
+        () "Leave Game" as LeaveGameInterface
+        ' Relationships
+        EscapeMenuComponent -left-> ResumeInterface
+        EscapeMenuComponent -right-> RestartInterface
+        EscapeMenuComponent -up-> ReturnToMainMenuInterface
+        EscapeMenuComponent -up-> LeaveGameInterface
+        ' Shared Relationships
+        EscapeMenuComponent -down-> SettingsInterface
+    }
+
+
+    node "Settings Menu" {
+
+        [Settings Menu] as SettingsMenuComponent
+        ' Interfaces
+        () "Controls" as ControlsInterface
+        () "Audio Sound" as AudioInterface
+        () "Video Graphics" as VideoInterface
+        () "Flipper Picker" as FlipperPickerInterface
+        () "Disable Chat" as DisableChatInterface
+        () "Back Button" as BackButtonInterface
+        () "Apply Changes Button" as ApplyChangesButtonInterface
+        () "Discard Changes Button" as DiscardChangesButtonInterface
+        () "Previous Settings" as PreviousSettingsInterface
+        () "Loaded Settings" as LoadedSettingsInterface
+        ' Relationships
+        SettingsMenuComponent -left-> ControlsInterface
+        SettingsMenuComponent -right-> AudioInterface
+        SettingsMenuComponent -up-> VideoInterface
+        SettingsMenuComponent -up-> FlipperPickerInterface
+        SettingsMenuComponent -up-> DisableChatInterface
+        SettingsMenuComponent -up-> BackButtonInterface
+        SettingsMenuComponent -up-> ApplyChangesButtonInterface
+        SettingsMenuComponent -up-> DiscardChangesButtonInterface
+        SettingsMenuComponent -up-> PreviousSettingsInterface
+        SettingsMenuComponent -up-> LoadedSettingsInterface
+        ' Shared Relationships
+        SettingsMenuComponent -down-> PlayerNameInterface
+        SettingsMenuComponent -down-> PlayerFlagInterface
+    }
+
+
+
+
+
+
+
+    node "Game Instance Menu" {
+
+        [Both Single Player \n and Multiplayer \n Game Instance] as GameInstanceComponent
+        ' Interfaces
+        () "Spinner" as SpinnerInterface
+        () "Slingshot" as SlingshotInterface
+        () "Scoop" as ScoopInterface
+        () "Drop Target" as DropTargetInterface
+        () "Drain" as DrainInterface
+        () "Bumper" as BumperInterface
+        () "Bash Target" as BashTargetInterface
+        () "End of Ball Bonus" as EndOfBallBonusInterface
+        () "Ball Lock" as BallLockInterface
+        () "Extra Ball" as ExtraBallInterface
+        () "Gobble Hole" as GobbleHoleInterface
+        () "Kickback" as KickbackInterface
+        () "Magic Post" as MagicPostInterface
+        () "Peg" as PegInterface
+        () "Demo Play" as DemoPlayInterface
+        () "Multi-Ball" as MultiBallInterface
+        () "Ball Save" as BallSaveInterface
+        () "Tilt" as TiltInterface
+        () "Right Flipper" as RightFlipperInterface
+        () "Left Flipper" as LeftFlipperInterface
+        () "Plunger" as PlungerInterface
+        () "Chat Panel" as ChatPanelInterface
+        () "Ball" as BallInterface
+        () "Score" as ScoreInterface
+        () "Balls Left" as BallsLeftInterface
+        () "High Score" as HighScoreInterface
+        () "Player" as PlayerInterface
+        () "Escape Menu" as EscapeMenuInterface
+        ' Relationships
+        GameInstanceComponent -left-> SpinnerInterface
+        GameInstanceComponent -down-> SlingshotInterface
+        GameInstanceComponent -down-> ScoopInterface
+        GameInstanceComponent -down-> DropTargetInterface
+        GameInstanceComponent -down-> DrainInterface
+        GameInstanceComponent -right-> BumperInterface
+        GameInstanceComponent -down-> BashTargetInterface
+        GameInstanceComponent -down-> EndOfBallBonusInterface
+        GameInstanceComponent -up-> BallLockInterface
+        GameInstanceComponent -up-> ExtraBallInterface
+        GameInstanceComponent -up-> GobbleHoleInterface
+        GameInstanceComponent -up-> KickbackInterface
+        GameInstanceComponent -up-> MagicPostInterface
+        GameInstanceComponent -up-> PegInterface
+        GameInstanceComponent -up-> DemoPlayInterface
+        GameInstanceComponent -up-> MultiBallInterface
+        GameInstanceComponent -up-> BallSaveInterface
+        GameInstanceComponent -up-> TiltInterface
+        GameInstanceComponent -up-> RightFlipperInterface
+        GameInstanceComponent -up-> LeftFlipperInterface
+        GameInstanceComponent -up-> PlungerInterface
+        GameInstanceComponent -down-> ChatPanelInterface
+        GameInstanceComponent -down-> BallInterface
+        GameInstanceComponent -down-> ScoreInterface
+        GameInstanceComponent -down-> BallsLeftInterface
+        GameInstanceComponent -down-> HighScoreInterface
+        GameInstanceComponent -down-> PlayerInterface
+        GameInstanceComponent -down-> EscapeMenuInterface
+
+    }
+
+
+
+
+
+
+
+    node "Multiplayer Menu" {
+
+        [Multiplayer Menu] as MultiplayerMenuComponent
+        ' Interfaces
+        () "Host Game" as HostGameInterface
+        () "Join Game" as JoinGameInterface
+        () "Back Button" as BackButtonMultiplayerInterface
+        () "Games List" as GamesListInterface
+        ' Relationships
+        MultiplayerMenuComponent -up-> HostGameInterface
+        MultiplayerMenuComponent -up-> JoinGameInterface
+        MultiplayerMenuComponent -up-> BackButtonMultiplayerInterface
+        MultiplayerMenuComponent -up-> GamesListInterface
+        ' Shared Relationships
+        MultiplayerMenuComponent -down-> PlayerNameInterface
+        MultiplayerMenuComponent -down-> PlayerFlagInterface
+
+
+    }
+
+
+}
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

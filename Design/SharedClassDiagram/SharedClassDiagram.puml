@@ -1,0 +1,57 @@
+
+
+
+
+
+@startuml SettingsMenuClassDiagram
+
+
+top to bottom direction
+
+package "Shared Classes" {
+
+    +Class "Settings" as SettingsClass {
+        In Settings Class Diagram
+    }
+
+    +Class "PlayerFlag" as PlayerFlagClass {
+        In Settings Class Diagram
+    }
+
+    +Class "PlayerName" as PlayerNameClass {
+        In Settings Class Diagram
+    }
+
+
+
+
+
+
+
+}
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
