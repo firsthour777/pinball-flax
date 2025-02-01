@@ -2,30 +2,49 @@
 
 package "Game Instance" {
 
+    '
+
     node "UI Elements" {
 
-        +Class "Chat Panel" as ChatPanelClass{
-
+        +Class "ChatPanel" as ChatPanelClass{
+            -String ChatMessageLog
+            +Void UpdateChatPanel(String chatMessages)
+            +String SendMessage(String chatMessage)
+            +String ReceiveMessage(String chatMessage)
+            -String FilterWords(String chatMessage)
         }
 
         +Class "Score" as ScoreClass{
-
+            -Int CurrentScore
+            +Void AddScore(Int scoreToAdd)
+            +Void SubtractScore(Int scoreToSubtract)
+            +Void ResetScore()
+            +Void SetScore(Int newScore)
         }
 
-        +Class "Balls Left" as BallsLeftClass{
-
+        +Class "BallsLeft" as BallsLeftClass{
+            -Int CurrentBallsLeft
+            +Void AddBalls(Int ballsToAdd)
+            +Void SubtractBalls(Int ballsToSubtract)
+            +Void ResetBalls()
+            +Void SetBalls(Int newBalls)
         }
 
-        +Class "High Score" as HighScoreClass{
-
+        +Class "HighScore" as HighScoreClass{
+            -Int CurrentHighestScore
+            -List<Int> HighScoreList
+            +Void AddHighScore(Int highScoreToAdd, String playerName, FlagType playerFlag)
+            +Bool isScoreHighEnough(Int highScoreToAdd)
+            +Void UpdateHighScoreList(Int highScoreToAdd)
+            -Void UpdateHighestScore(Int highScoreToAdd)
         }
 
-        +Class "Player" as PlayerClass{
-
+        +Class "PlayerInfo" as PlayerInfoClass{
+            In Settings Class Diagram
         }
 
-        +Class "Escape Menu" as EscapeMenuClass{
-
+        +Class "EscapeMenu" as EscapeMenuClass{
+            In Escape Menu Class Diagram
         }
 
     }
@@ -33,101 +52,194 @@ package "Game Instance" {
 
     node "Gameplay Elements" {
 
-        +Class "Extra Ball" as ExtraBallClass{
+
+        +Class "EndOfBallBonus" as EndOfBallBonusClass{
+            
+        
+
+            +Int TiltsUsed
+            +Int PausesUsed
+            +Int PlungerLaunchPower
+            +Int FlippersHit
+            +Int SpinnersHit
+            +Int PegsHit
+            +Int MagicPostsHit
+            +Int KickbacksHit
+            +Int GobbleHolesEntered
+            +Int BashTargetsHit
+            +Int BumpersHit
+            +Int DropTargetsHit
+            +Int ScoopsEntered
+            +Int BallsLocked
+            +Int SlingshotsHit
+
+            +Int CalculateEndOfBallBonus()
 
         }
 
-        +Class "End of Ball Bonus" as EndOfBallBonusClass{
+        +Class "DemoPlay" as DemoPlayClass{
+            -Bool isEnabled
+            +Void StartDemoPlay()
+            +Void StopDemoPlay()
 
         }
 
-        +Class "Demo Play" as DemoPlayClass{
 
-        }
 
-        +Class "Multi-Ball" as MultiBallClass{
-
-        }
-
-        +Class "Ball Save" as BallSaveClass{
-
-        }
-
-        +Class "Player Flag" as PlayerFlagClass{
-
-        }
 
     }
 
     node "Playfield Elements" {
 
-        +Class "Spinner" as SpinnerClass{
+
+
+        +Class "Slingshot" as SlingshotClass{
+            -Bool isEnabled
+            +Void DisableSlingshot()
+            +Void EnableSlingshot()
+            +Void HitSlingshot()
+
+
 
         }
 
-        +Class "Slingshot" as SlingshotClass{
+
+
+
+
+
+        +Class "BallLock" as BallLockClass{
+            -Bool isEnabled
+            +Void DisableBallLock()
+            +Void EnableBallLock()
+            +Void LockBall()
+            +Void FreeBall()
 
         }
 
         +Class "Scoop" as ScoopClass{
+            -Bool isEnabled
+            +Void DisableScoop()
+            +Void EnableScoop()
+            +Void EnterScoop()
+            +Void FreeBall()
 
         }
 
-        +Class "Drop Target" as DropTargetClass{
+        +Class "DropTarget" as DropTargetClass{
+            -Bool isEnabled
+            -Bool isAllDropTargetsHit
+            +Void DisableDropTarget()
+            +Void EnableDropTarget()
+            +Void HitDropTarget()
 
         }
 
         +Class "Drain" as DrainClass{
-
+            -Bool isEnabled
+            +Void DisableDrain()
+            +Void EnableDrain()
+            +Void EnterDrain()
         }
 
         +Class "Bumper" as BumperClass{
+            -Bool isEnabled
+            +Void DisableBumper()
+            +Void EnableBumper()
+            +Void HitBumper()
 
         }
 
-        +Class "Bash Target" as BashTargetClass{
+        +Class "BashTarget" as BashTargetClass{
+            -Bool isEnabled
+            +Void DisableBashTarget()
+            +Void EnableBashTarget()
+            +Void HitBashTarget()
 
         }
 
-        +Class "Ball Lock" as BallLockClass{
 
-        }
 
-        +Class "Gobble Hole" as GobbleHoleClass{
+        +Class "GobbleHole" as GobbleHoleClass{
+            -Bool isEnabled
+            -Bool isBonusGoalEnabled
+            +Void DisableGobbleHole()
+            +Void EnableGobbleHole()
+            +Void EnterGobbleHole()
+            +Void EnableBonusGoal()
+            +Void DisableBonusGoal()
+
+
 
         }
 
         +Class "Kickback" as KickbackClass{
+            -Bool isEnabled
+            +Void DisableKickback()
+            +Void EnableKickback()
+            +Void HitKickback()
 
         }
 
-        +Class "Magic Post" as MagicPostClass{
+        +Class "MagicPost" as MagicPostClass{
+            -Bool isEnabled
+            +Void DisableMagicPost()
+            +Void EnableMagicPost()
+            +Void HitMagicPost()
 
         }
 
         +Class "Peg" as PegClass{
+            -Bool isEnabled
+            +Void DisablePeg()
+            +Void EnablePeg()
+            +Void HitPeg()
 
-        }
-
-        +Class "Left Flipper" as LeftFlipperClass{
-
-        }
-
-        +Class "Right Flipper" as RightFlipperClass{
-
-        }
-
-        +Class "Plunger" as PlungerClass{
-
-        }
-
-        +Class "Ball" as BallClass{
 
         }
 
         +Class "Spinner" as SpinnerClass{
+            -Bool isEnabled
+            +Void DisableSpinner()
+            +Void EnableSpinner()
+            +Void SpinSpinner()
+            +Void HitSpinner()
+        }
+
+
+        +Class "Flipper" as FlipperClass{
+            -Bool isEnabled
+            +Void FlipFlipper()
+            +Void DisableFlipper()
+            +Void EnableFlipper()
+        }
+
+        +Class "Plunger" as PlungerClass{
+            -LaunchPower
+            +Void PullPlunger()
+            +Void LaunchBall()
+            +Void ResetPlunger()
+
 
         }
+
+        +Class "Ball" as BallClass{
+            +List<Ball> BallsInPlay
+            +Int Velocity
+            +Int Momentum
+            +Int Acceleration
+            +Int Impulse
+            +Int BallNumber
+            +Int Direction
+
+            +Void RemoveBall(Ball ballToRemove)
+            +Void SpawnBall(Int spawnLocation)
+            +Void SpawnBallAtPlunger()
+
+
+        }
+
+
 
     }
 
@@ -139,7 +251,7 @@ package "Game Instance" {
         }
 
         +Class "Tilt" as TiltClass{
-
+            +Void TiltPlayfield()
         }
 
     }

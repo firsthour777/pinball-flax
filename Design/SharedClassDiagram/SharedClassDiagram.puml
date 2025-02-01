@@ -14,17 +14,13 @@ package "Shared Classes" {
         In Settings Class Diagram
     }
 
-    +Class "PlayerFlag" as PlayerFlagClass {
+
+
+
+
+    +Class "PlayerInfo" as PlayerInfoClass{
         In Settings Class Diagram
     }
-
-    +Class "PlayerName" as PlayerNameClass {
-        In Settings Class Diagram
-    }
-
-
-
-
 
 
 

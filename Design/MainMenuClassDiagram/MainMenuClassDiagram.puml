@@ -40,11 +40,7 @@ package "Main Menu" {
             In Settings Class Diagram
         }
 
-        +Class "PlayerFlag" as PlayerFlagClass {
-            In Settings Class Diagram
-        }
-
-        +Class "PlayerName" as PlayerNameClass {
+       +Class "PlayerInfo" as PlayerInfoClass{
             In Settings Class Diagram
         }
 

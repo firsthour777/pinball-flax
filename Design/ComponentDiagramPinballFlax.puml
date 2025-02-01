@@ -19,8 +19,7 @@ package "PinballFlax Game" {
 
     ' Shared Interfaces
     () "Settings" as SettingsInterface
-    () "Player Name" as PlayerNameInterface
-    () "Player Flag" as PlayerFlagInterface
+    () "Player Info" as PlayerInfoInterface
 
 
     node "Main Menu" {
@@ -40,8 +39,7 @@ package "PinballFlax Game" {
         MainMenuComponent -up-> ExitInterface
         ' Shared Relationships
         MainMenuComponent -down-> SettingsInterface
-        MainMenuComponent -down-> PlayerNameInterface
-        MainMenuComponent -down-> PlayerFlagInterface
+        MainMenuComponent -down-> PlayerInfoInterface
     }
 
     node "Escape Menu" {
@@ -88,8 +86,7 @@ package "PinballFlax Game" {
         SettingsMenuComponent -up-> PreviousSettingsInterface
         SettingsMenuComponent -up-> LoadedSettingsInterface
         ' Shared Relationships
-        SettingsMenuComponent -down-> PlayerNameInterface
-        SettingsMenuComponent -down-> PlayerFlagInterface
+        SettingsMenuComponent -down-> PlayerInfoInterface
     }
 
 
@@ -111,24 +108,20 @@ package "PinballFlax Game" {
         () "Bash Target" as BashTargetInterface
         () "End of Ball Bonus" as EndOfBallBonusInterface
         () "Ball Lock" as BallLockInterface
-        () "Extra Ball" as ExtraBallInterface
         () "Gobble Hole" as GobbleHoleInterface
         () "Kickback" as KickbackInterface
         () "Magic Post" as MagicPostInterface
         () "Peg" as PegInterface
         () "Demo Play" as DemoPlayInterface
-        () "Multi-Ball" as MultiBallInterface
-        () "Ball Save" as BallSaveInterface
         () "Tilt" as TiltInterface
-        () "Right Flipper" as RightFlipperInterface
-        () "Left Flipper" as LeftFlipperInterface
+        () "Flipper" as FlipperInterface
         () "Plunger" as PlungerInterface
         () "Chat Panel" as ChatPanelInterface
         () "Ball" as BallInterface
         () "Score" as ScoreInterface
         () "Balls Left" as BallsLeftInterface
         () "High Score" as HighScoreInterface
-        () "Player" as PlayerInterface
+        () "PlayerInfo" as PlayerInfoInterface
         () "Escape Menu" as EscapeMenuInterface
         ' Relationships
         GameInstanceComponent -left-> SpinnerInterface
@@ -140,26 +133,23 @@ package "PinballFlax Game" {
         GameInstanceComponent -down-> BashTargetInterface
         GameInstanceComponent -down-> EndOfBallBonusInterface
         GameInstanceComponent -up-> BallLockInterface
-        GameInstanceComponent -up-> ExtraBallInterface
         GameInstanceComponent -up-> GobbleHoleInterface
         GameInstanceComponent -up-> KickbackInterface
         GameInstanceComponent -up-> MagicPostInterface
         GameInstanceComponent -up-> PegInterface
         GameInstanceComponent -up-> DemoPlayInterface
-        GameInstanceComponent -up-> MultiBallInterface
-        GameInstanceComponent -up-> BallSaveInterface
         GameInstanceComponent -up-> TiltInterface
-        GameInstanceComponent -up-> RightFlipperInterface
-        GameInstanceComponent -up-> LeftFlipperInterface
+        GameInstanceComponent -up-> FlipperInterface
         GameInstanceComponent -up-> PlungerInterface
-        GameInstanceComponent -down-> ChatPanelInterface
-        GameInstanceComponent -down-> BallInterface
-        GameInstanceComponent -down-> ScoreInterface
+        GameInstanceComponent -up-> ChatPanelInterface
+        GameInstanceComponent -up-> BallInterface
+        GameInstanceComponent -up-> ScoreInterface
         GameInstanceComponent -down-> BallsLeftInterface
         GameInstanceComponent -down-> HighScoreInterface
         GameInstanceComponent -down-> PlayerInterface
         GameInstanceComponent -down-> EscapeMenuInterface
-
+        ' Shared Relationships
+        GameInstanceComponent -down-> PlayerInfoInterface
     }
 
 
@@ -182,8 +172,7 @@ package "PinballFlax Game" {
         MultiplayerMenuComponent -up-> BackButtonMultiplayerInterface
         MultiplayerMenuComponent -up-> GamesListInterface
         ' Shared Relationships
-        MultiplayerMenuComponent -down-> PlayerNameInterface
-        MultiplayerMenuComponent -down-> PlayerFlagInterface
+        MultiplayerMenuComponent -down-> PlayerInfoInterface
 
 
     }

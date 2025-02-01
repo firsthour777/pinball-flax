@@ -88,17 +88,14 @@ package "Settings Menu" {
         }
 
 
-        +Class "Player Name" as PlayerNameClass {
+
+
+        +Class "PlayerInfo" as PlayerInfoClass{
             ' Dissallow modification during gameplay
             +String PlayerName
-
+            +FlagType PlayerFlag
         }
 
-        +Class "Player Flag" as PlayerFlagClass {
-            ' Dissallow modification during gameplay
-            +FlagType PlayerFlagSelected
-
-        }
 
     }
 

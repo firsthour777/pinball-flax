@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+@startuml
+start
+    :User enters a chat message;
+    :Call SendMessage(chatMessage);
+    :FilterWords(chatMessage);
+    if (Message contains filtered words?) then (Yes)
+        :Modify chat message;
+    endif
+    :Append message to ChatMessageLog;
+    :UpdateChatPanel(ChatMessageLog);
+    :Send message to recipient;
+    :ReceiveMessage(chatMessage);
+    :Append received message to ChatMessageLog;
+    :UpdateChatPanel(ChatMessageLog);
+stop
+@enduml
+
+
+
+
+
+
+
+
